@@ -7,7 +7,7 @@ const heading2 = React.createElement("h2",
 {
     id: "title"
 }, 
-"Heading2")
+"Hello world")
 
 const container = React.createElement("div", 
 {
