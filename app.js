@@ -1,40 +1,43 @@
-/*
- Created a server
- Parcel do HMR - Hot Module Replacement
- File watcher algorithm
- minify
- bundling
- cleaning our code
- dev and Production build
- super fast build algorithm
- image optimization
- caching while development
- compressing the file
- compatable with older version of the browser
- https on dev
- manage port numbers
- Consistent hashing algorithm
- zero config
- */
 import React from "react";
 import ReactDOM from "react-dom/client"
+
+//React.createElement => Object => HTML(DOM)
+/*
 const heading = React.createElement("h1", 
 {
-    id: "title"
+    id: "title",
+    key: "h1"
 }, 
-"Heading1 for parcel")
-const heading2 = React.createElement("h2", 
-{
-    id: "title"
-}, 
-"Hello world")
+"Namaste react")
+*/
 
-const container = React.createElement("div", 
-{
-    id: "container"
-}, 
-[heading, heading2])
+
+//JSX => React.createElement => Object => HTML(DOM)
+
+const Title = () =>(
+    <h1 id="title" key="h2">
+     Namaste React
+    </h1> //this is not html.It is html like syntax
+) //JSX expression   
+
+
+// React Components (two types)
+// - Functional - NEW
+// - Class Based Components - OLD
+//Functional components or any component start with capital letters.
+
+//Composing Components
+const HeaderComponent = () => {
+    return (
+    <div>
+        <Title />
+        <h2>Namaste React Functional Component</h2>
+        <h2>This is h2 tag</h2>
+    </div>
+    );
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 
-root.render(container)
+//passing a react element inside the root
+root.render(<HeaderComponent />)
